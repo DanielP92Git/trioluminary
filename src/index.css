@@ -1,0 +1,829 @@
+/* Colors set: */
+#F5851D
+#458FD9
+#471755
+#FFFFFF
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  height: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* overflow: hidden; */
+
+  /* border: 2px solid red; */
+}
+
+.page-background {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  /* border: 2px solid forestgreen;  */
+}
+
+#root {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  height: 100dvh;
+  width: 100dvw;
+
+  /* border: 2px solid rgb(40, 104, 255); */
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 0;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+
+  /* border: 2px solid #fb15e4; */
+}
+
+.section-two {
+  display: flex;
+  justify-content: end;
+  padding-right: 1.5rem;
+  margin-top: 1rem;
+
+  /* border: 4px solid #fb9015; */
+}
+
+.komunikat-container {
+  background-color: rgba(57, 55, 46, 0.7);
+  background-color: #ffffffdf;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  width: 70%;
+  height: auto;
+
+  position: relative;
+  padding-bottom: 1rem;
+  padding: 10px 20px 10px 0px;
+  border-radius: 8px;
+  margin-left: 1rem;
+  box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.3);
+
+  /* border: 3px solid rgb(24, 236, 236); */
+}
+
+.slide-effect {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+  /* transition-delay: 500ms; */
+}
+
+.sidebar {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  /* border: 3px solid fuchsia; */
+}
+
+.logo-div {
+  width: 100%;
+  height: 19vh;
+  background-color: #ffffff78;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 100%; /* Make the logo responsive (take up maximum width of the container) */
+  max-height: 100%; /* Ensure the logo doesn't exceed 100% of the container's height */
+  height: auto; /* Maintain the aspect ratio of the logo */
+  object-fit: contain; /* Ensure the logo doesn't stretch if it's too large */
+}
+
+.logo-div p {
+  font-family: "Poiret One", serif;
+  font-variant: small-caps;
+  color: #fff;
+  color: black;
+  font-weight: 500;
+  font-size: 5rem;
+  font-size: clamp(7rem, 10vw, 8rem);
+  margin-left: 1rem;
+}
+
+/* Heading styles */
+/* h1 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+} */
+
+/* Text paragraph style */
+.trio-description {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  flex-grow: 1;
+  color: white;
+  color: black;
+  line-height: 1.5;
+  padding-left: 1rem;
+  height: auto;
+  margin-top: 2%;
+  text-align: start;
+  font-family: "Assistant", sans-serif;
+  font-weight: 500;
+
+  /* border: 1px solid yellow; */
+}
+
+.artist-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: auto;
+
+  /* border: 2px solid chartreuse; */
+}
+
+h2 {
+  color: black;
+  margin-top: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 3rem;
+  font-family: "Assistant", sans-serif;
+}
+
+.artists-description {
+  font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+  color: black;
+  line-height: 1.9;
+
+  /* width: 72%; */
+  height: auto;
+  margin-bottom: 2rem;
+  text-align: start;
+  font-family: "Assistant", sans-serif;
+  font-weight: 500;
+
+  /* border: 2px solid rgb(255, 176, 48); */
+}
+
+/* Call to action button */
+.cta-btn {
+  color: #fff;
+  border: none;
+  font-size: clamp(1rem, 1vw, 1rem);
+  cursor: pointer;
+  width: 10rem;
+  border-radius: 5px;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  padding: 10px;
+
+  background-image: linear-gradient(90deg, #316192, #458fd9 15%);
+  background-size: 300% 300%;
+  transition: background-size 0.8s ease;
+  font-family: "Assistant", sans-serif;
+
+  /* border: 2px solid darkmagenta; */
+}
+
+.cta-btn:hover {
+  background-image: linear-gradient(90deg, #458fd9, #316192);
+  background-size: 100% 100%;
+}
+
+.cta-link {
+  text-decoration: none;
+  color: white;
+}
+
+/* Footer text */
+.footer-txt {
+  margin-top: 3%;
+  font-size: 1em;
+  color: #4d4d4d;
+}
+
+.about-trio-btn {
+  background-image: linear-gradient(90deg, #251e8a, #4f45d9);
+
+  background-color: #4f45d9;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 11rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Assistant", sans-serif;
+
+  /* border: 1px solid red; */
+}
+
+.about-trio-btn:hover {
+  background-image: linear-gradient(90deg, #2f288f, #4f45d9e8);
+}
+
+.about-artists-btn {
+  background-image: linear-gradient(#251e8a, #675df4);
+  background-size: 300% 300%;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 11rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: background-size 0.3s ease;
+  margin-bottom: 1rem;
+  font-family: "Assistant", sans-serif;
+}
+
+.about-artists-btn:hover {
+  background-image: linear-gradient(90deg, #2f288f, #4f45d9e8);
+  background-size: 100% 100%;
+}
+
+.artists-img {
+  border-radius: 50% 20% 50% 20%;
+  /* min-width: 60%; */
+  /* min-height: 40%; */
+  width: 30%;
+
+  margin-bottom: 3rem;
+  margin-right: 1rem;
+  position: static;
+  /* right: 65%;
+  top: 60%; */
+}
+
+ul {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  height: 13rem;
+  padding: 0;
+
+  /* margin-top: 4rem; */
+  /* margin-left: 2rem; */
+
+  /* border: 2px solid rgb(0, 8, 255); */
+}
+
+.artist-btn {
+  background-image: linear-gradient(
+    120deg,
+    #326eab,
+    #458fd9 30%,
+    #ffffff4f 97%
+  );
+  background-color: #458fd9;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-family: "Assistant", sans-serif;
+  font-weight: 500;
+
+  /* border: 2px solid red; */
+}
+
+.artist-btn:hover {
+  /* background-image: linear-gradient(135deg, #f2cb77be, #d9920d91); */
+  background-color: #458fd9b3;
+  /* color: black; */
+  /* border: 1px solid; */
+}
+
+@keyframes down {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 11rem;
+  padding: 3px 5px;
+  margin-top: 1rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.751);
+
+  /* border: 1px solid; */
+}
+
+.youtube-icon,
+.instagram-icon,
+.facebook-icon-btn {
+  width: 2rem;
+}
+
+/* Events Page */
+
+.events-div {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 3rem;
+
+  /* border: 2px solid forestgreen; */
+}
+
+.events-div > h1 {
+  position: absolute;
+  top: 10rem;
+  padding: 5px;
+  margin: 0 auto;
+  font-family: "Assistant", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.events-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 90%;
+  height: auto;
+
+  /* border: 2px solid blue; */
+}
+
+.event-box {
+  text-decoration: none;
+  display: flex;
+  width: 80%;
+  height: 2%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  text-align: center;
+  font-family: "Assistant", sans-serif;
+  font-size: larger;
+  color: white;
+
+  background-image: linear-gradient(90deg, #f5851d, #4f45d9);
+
+  /* border: 2px solid rgb(14, 16, 94); */
+}
+
+.event-box > h4 {
+  margin: 0;
+}
+
+.event-date-box {
+  width: 20%;
+  padding: 0;
+}
+
+.event-date-box > h4 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.event-date-box > p {
+  /* font-size: 2rem; */
+  margin: 0;
+}
+
+.event-detils-box {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 80%;
+
+  border: 3px solid;
+}
+
+.event-address {
+  color: #dedede;
+}
+
+.events-hero-image {
+  z-index: -1;
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.back-home-btn {
+  background-image: linear-gradient(90deg, #251e8a, #4f45d9);
+
+  background-color: #4f45d9;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 6rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Assistant", sans-serif;
+  margin-top: 1rem;
+  position: absolute;
+  right: 0;
+  top: 21rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .section-two {
+    height: 100%;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+
+    /* border: 2px solid rgb(41, 255, 119); */
+  }
+
+  .about-trio-btn,
+  .about-artists-btn {
+    font-size: clamp(0.9rem, 2vw + 1rem, 1.4rem);
+  }
+
+  .sidebar {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    /* border: 1px solid fuchsia; */
+  }
+
+  .sidebar ul {
+    margin-bottom: auto;
+  }
+
+  .artist-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    /* border: 1px solid; */
+  }
+
+  .logo-div p {
+    font-size: clamp(4rem, 10vw, 6.7em);
+
+    /* border: 2px solid aqua; */
+  }
+
+  .trio-description {
+    font-size: clamp(0.9rem, 2vw + 1rem, 1.8rem);
+    height: 90%;
+    flex-grow: 1;
+    margin: 0;
+    box-sizing: border-box;
+
+    /* border: 1px solid; */
+  }
+
+  .artists-description {
+    font-size: clamp(0.9rem, 2vw + 1rem, 1.8rem);
+    margin: 0;
+    width: 85%;
+    padding: 2px;
+    margin-bottom: 2rem;
+
+    /* border: 1px solid turquoise; */
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    width: 100%;
+    text-align: end;
+
+    /* border: 1px solid; */
+  }
+
+  .artists-img {
+    margin-top: auto;
+    width: 37%;
+    margin-left: 0;
+    padding: 0;
+    position: static;
+  }
+
+  .cta-btn {
+    font-size: clamp(0.9rem, 2vw + 1rem, 1.5rem);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-two {
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+    justify-content: start;
+    padding: 0 10px;
+    margin: 0;
+    height: 80%;
+
+    /* border: 2px solid rgb(21, 255, 0); */
+  }
+
+  .artists-description {
+    font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+  }
+
+  .sidebar {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: 5rem;
+
+    /* border: 2px solid sandybrown; */
+  }
+
+  .logo-div > p {
+    font-family: "Poiret One", serif;
+    /* font-size: 3rem; */
+    font-size: clamp(3.8rem, 4vw, 4rem);
+
+    /* margin-left: 7rem; */
+    color: #000000;
+  }
+
+  .trio-description {
+    font-size: clamp(0.8rem, 1vw + 0.5rem, 1rem);
+
+    /* border: 1px solid; */
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    background-color: unset;
+  }
+
+  .icons-container {
+    display: none;
+  }
+
+  .icons-container-mobile {
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    gap: 2rem;
+
+    width: 100%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.751);
+    z-index: 100;
+
+    /* border: 1px solid forestgreen; */
+  }
+
+  .facebook-icon-btn,
+  .youtube-icon-btn {
+    width: 1.7rem;
+    align-self: center;
+  }
+
+  .youtube-icon-btn {
+    width: 2rem;
+    margin: 0;
+  }
+
+  .about-artists-btn,
+  .about-trio-btn {
+    font-size: 90%;
+    height: 40%;
+    width: 30%;
+    padding: 1px;
+    margin: 0;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    list-style: none;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 0.5rem;
+
+    /* border: 2px solid rgb(0, 8, 255); */
+  }
+
+  ul > li {
+    grid-row: span 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40%;
+
+    /* border: 2px solid rgb(127, 255, 72); */
+  }
+
+  .artist-btn {
+    margin: 0;
+    width: 90%;
+    height: 2.6rem;
+    font-size: clamp(0.8rem, 2vh, 0.5rem);
+    padding: 2px;
+  }
+
+  .artists-img {
+    position: static;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+
+  .cta-btn {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    width: 7rem;
+
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .section-two {
+    height: auto;
+  }
+
+  .icons-container-mobile {
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .komunikat-container {
+    height: auto;
+    width: 95%;
+    margin: 0;
+  }
+
+  ul > li {
+    grid-row: span 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40%;
+
+    /* border: 2px solid rgb(127, 255, 72); */
+  }
+
+  .logo-div {
+    height: 10vh;
+  }
+
+  .logo {
+    width: 25%;
+  }
+
+  .logo-div p {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .artist-btn {
+    font-size: 0.7rem;
+  }
+
+  .artists-img {
+    margin-top: auto;
+  }
+  .events-container {
+    margin-top: 4rem;
+    padding: 1rem;
+  }
+
+  .back-home-btn {
+    top: 17rem;
+  }
+
+  .event-box {
+    padding: 7px;
+    width: 100%;
+  }
+
+  .event-date-box {
+    width: 20%;
+    font-size: 12px;
+    padding: 5px 0;
+    margin-left: 1rem;
+    border: 2px solid;
+  }
+
+  .event-date-box > h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .events-hero-image {
+    height: 30vh;
+  }
+}
+
+/* @media only screen and (min-height: 850px) {
+  .sidebar {
+    align-self: center;
+    height: 50%;
+  }
+
+  #root {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .main {
+    height: auto;
+    justify-content: center;
+  }
+
+  .komunikat-container {
+    height: auto;
+  }
+
+  .trio-description {
+    font-size: clamp(1rem, 2vw + 0.4rem, 2rem);
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-right: 6rem;
+  }
+
+  .artists-description {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 4rem;
+  }
+
+  .artists-img {
+    width: 70%;
+    opacity: 1;
+    position: relative;
+  }
+} */
