@@ -4,7 +4,10 @@ function Event({ event }) {
   return (
     <a
       dir="rtl"
-      href={link}
+      href={link || undefined}
+      onClick={(e) => {
+        if (!link) e.preventDefault();
+      }}
       className="event-box"
       target="_blank"
       rel="noreferrer"
@@ -18,6 +21,7 @@ function Event({ event }) {
         <div>{name}</div>
         <div className="event-address">{address}</div>
       </div>
+      {!link && <p>פרטים בקרוב</p>}
     </a>
   );
 }
