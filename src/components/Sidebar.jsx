@@ -38,7 +38,7 @@ function Sidebar({
           ))}
         </ul>
       )}
-      <Link className="about-trio-btn" to="/events">להופעות הקרובות</Link>
+      <Link className="coming-up-btn" to="/events">להופעות הקרובות</Link>
       <SocialLinks />
     </div>
   );
