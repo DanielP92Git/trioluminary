@@ -21,7 +21,9 @@ function Event({ event }) {
         <div>{name}</div>
         <div className="event-address">{address}</div>
       </div>
-      {!link && <p>פרטים בקרוב</p>}
+      <p className={`${!link ? 'details-soon' : 'more-details'}`}>{`${
+        !link ? "פרטים בקרוב" : "לפרטים נוספים"
+      }`}</p>
     </a>
   );
 }

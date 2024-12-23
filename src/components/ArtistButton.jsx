@@ -1,10 +1,16 @@
 /* eslint-disable react/prop-types */
-function ArtistButton({ artist, onSetChosen, onHandleBackground }) {
+function ArtistButton({
+  artist,
+  onSetChosen,
+  onHandleBackground,
+  handleClickedArtist,
+}) {
   function handleSetChosen(e) {
     const clickedArtist = e.target.value;
 
     onSetChosen(clickedArtist);
     onHandleBackground(clickedArtist);
+    handleClickedArtist();
   }
 
   return (
@@ -14,7 +20,7 @@ function ArtistButton({ artist, onSetChosen, onHandleBackground }) {
         onClick={(e) => handleSetChosen(e)}
         className="artist-btn"
       >
-        {`${artist.name} (${artist.instrument})`}
+        {artist.name} <br /> {`(${artist.instrument})`}
       </button>
     </li>
   );

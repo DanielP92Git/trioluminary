@@ -11,6 +11,8 @@ import mainBackgroundMobile from "../assets/piano-backgroundMobile.jpg";
 import danielsImage from "../assets/daniel.jpg";
 import tomersImage from "../assets/tomer-b&w.jpg";
 import shirsImage from "../assets/shir.jpg";
+import EmbedVideo from "../components/EmbedVideo";
+import MenuButton from "../components/MenuButton";
 
 const artistsData = [
   {
@@ -44,6 +46,8 @@ function HomePage() {
     isMobile ? mainBackgroundMobile : mainBackground
   );
 
+  const [barsClicked, setBarsClicked] = useState(false);
+
   const setInitialBackground = () => {
     // Check screen width and set background image accordingly
     if (window.innerWidth <= 768) {
@@ -69,6 +73,7 @@ function HomePage() {
       window.removeEventListener("resize", updateDeviceType);
     };
   }, []);
+
   useEffect(() => {
     const bodyEl = document.querySelector(".page-background");
     // const bodyEl = document.querySelector;
@@ -135,18 +140,23 @@ function HomePage() {
       <div className="page-background"></div>
       <Header chosen={chosen} />
 
+      {isMobile && (
+        <MenuButton barsClicked={barsClicked} setBarsClicked={setBarsClicked} />
+      )}
       <div className="section-two">
         <MainDescription showDesc={showDesc} chosen={chosen} />
         <Sidebar
+          setBarsClicked={setBarsClicked}
+          barsClicked={barsClicked}
           onSetChosen={handleChosen}
           onSetAbout={handleAbout}
-          showDesc={showDesc}
           showList={showArtistsList}
           onSetShowList={setShowArtistsList}
           onHandleBackground={handleBackgroundChange}
           artistsData={artistsData}
         />
       </div>
+      <EmbedVideo />
       {isMobile && <SocialLinksMobile />}
     </main>
   );

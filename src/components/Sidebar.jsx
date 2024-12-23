@@ -4,6 +4,8 @@ import SocialLinks from "./SocialLinks";
 import { Link } from "react-router-dom";
 
 function Sidebar({
+  setBarsClicked,
+  barsClicked,
   onSetChosen,
   onSetAbout,
   showList,
@@ -11,10 +13,20 @@ function Sidebar({
   onHandleBackground,
   artistsData,
 }) {
+  function handleClickedArtist() {
+    setBarsClicked(false);
+  }
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${barsClicked ? "sidebar-show" : ""}`}>
       {showList && (
-        <button className="about-trio-btn" onClick={onSetAbout}>
+        <button
+          className="about-trio-btn"
+          onClick={() => {
+            onSetAbout()
+            handleClickedArtist()
+          }}
+        >
           אודות הטריו
         </button>
       )}
@@ -34,11 +46,14 @@ function Sidebar({
               artist={artist}
               onSetChosen={onSetChosen}
               onHandleBackground={onHandleBackground}
+              handleClickedArtist={handleClickedArtist}
             />
           ))}
         </ul>
       )}
-      <Link className="coming-up-btn" to="/events">להופעות הקרובות</Link>
+      <Link className="coming-up-btn" to="/events">
+        להופעות הקרובות
+      </Link>
       <SocialLinks />
     </div>
   );
