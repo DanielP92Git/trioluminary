@@ -378,9 +378,13 @@ input {
 }
 
 .submit-message {
+  font-family: "Assistant", sans-serif;
+
   padding: 5px;
   border-radius: 5px;
-  background-color: rgb(91, 142, 230);
+  background-color: rgb(198, 198, 198);
+  border-top: 5px solid rgb(0, 212, 4);
+  color: rgb(77, 77, 77);
 }
 
 /* Footer text */

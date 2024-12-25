@@ -16,7 +16,8 @@ function ContactForm({ setShowForm, setSubmitMessage }) {
   } = useForm();
 
   function onSubmit(data) {
-    const serviceID = "service_knmg8rm";
+    // const serviceID = "service_knmg8rm";
+    const serviceID = "service_yenq5yp";
     const templateID = "template_0ahzrr9";
     const userID = "dyz9UzngEOQUHFgv3";
     emailjs.send(serviceID, templateID, data, userID).then(
@@ -25,7 +26,8 @@ function ContactForm({ setShowForm, setSubmitMessage }) {
         // Show a success message to the user
         reset();
         setShowForm(false);
-        setSubmitMessage("ההודעה נשלחה בהצלחה!✨");
+        setSubmitMessage("ההודעה נשלחה בהצלחה! ✅");
+        setTimeout(() => setSubmitMessage(""), 5000);
       },
       (error) => {
         setSubmitMessage("משהו השתבש😞, אנא נסו שנית");
