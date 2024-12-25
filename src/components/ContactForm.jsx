@@ -16,8 +16,8 @@ function ContactForm({ setShowForm, setSubmitMessage }) {
   } = useForm();
 
   function onSubmit(data) {
-    // const serviceID = "service_knmg8rm";
-    const serviceID = "service_yenq5yp";
+    // const serviceID = "service_yenq5yp"; // my email
+    const serviceID = "service_knmg8rm"; // trio email
     const templateID = "template_0ahzrr9";
     const userID = "dyz9UzngEOQUHFgv3";
     emailjs.send(serviceID, templateID, data, userID).then(
