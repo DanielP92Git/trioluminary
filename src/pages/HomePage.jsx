@@ -11,7 +11,6 @@ import mainBackgroundMobile from "../assets/piano-backgroundMobile.jpg";
 import danielsImage from "../assets/daniel.jpg";
 import tomersImage from "../assets/tomer-b&w.jpg";
 import shirsImage from "../assets/shir.jpg";
-import EmbedVideo from "../components/EmbedVideo";
 import MenuButton from "../components/MenuButton";
 
 const artistsData = [
@@ -47,6 +46,7 @@ function HomePage() {
   );
 
   const [barsClicked, setBarsClicked] = useState(false);
+  const [showForm, setShowForm] = useState(false)
 
   const setInitialBackground = () => {
     // Check screen width and set background image accordingly
@@ -144,7 +144,7 @@ function HomePage() {
         <MenuButton barsClicked={barsClicked} setBarsClicked={setBarsClicked} />
       )}
       <div className="section-two">
-        <MainDescription showDesc={showDesc} chosen={chosen} />
+        <MainDescription showDesc={showDesc} chosen={chosen} setShowForm={setShowForm} showForm={showForm}/>
         <Sidebar
           setBarsClicked={setBarsClicked}
           barsClicked={barsClicked}
@@ -156,7 +156,6 @@ function HomePage() {
           artistsData={artistsData}
         />
       </div>
-      <EmbedVideo />
       {isMobile && <SocialLinksMobile />}
     </main>
   );
