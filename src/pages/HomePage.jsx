@@ -1,17 +1,14 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import MainDescription from "../components/MainDescription";
-import Sidebar from "../components/Sidebar";
 import SocialLinksMobile from "../components/SocialLinksMobile";
-import mainBackground from "../assets/piano-background.jpg";
 import danielsImageMobile from "../assets/daniel-mobile.jpg";
-import tomersImageMobile from "../assets/tomer-b&w-mobile.jpg";
+import tomersImageMobile from "../assets/tomer-mobile.jpg";
 import shirsImageMobile from "../assets/shir-mobile.jpg";
-import mainBackgroundMobile from "../assets/piano-backgroundMobile.jpg";
 import danielsImage from "../assets/daniel.jpg";
-import tomersImage from "../assets/tomer-b&w.jpg";
+import tomersImage from "../assets/tomer.webp";
 import shirsImage from "../assets/shir.jpg";
-import MenuButton from "../components/MenuButton";
 
 const artistsData = [
   {
@@ -34,48 +31,30 @@ const artistsData = [
   },
 ];
 
-function HomePage() {
+function HomePage({isMobile}) {
   const [chosen, setChosen] = useState({});
   const [showDesc, setShowDesc] = useState(true);
   const [showArtistsList, setShowArtistsList] = useState(false);
 
   // Set up your state for the background image
-  const [isMobile, setIsMobile] = useState(false);
-  const [backgroundImage, setBackgroundImage] = useState(() =>
-    isMobile ? mainBackgroundMobile : mainBackground
-  );
+  // const [isMobile, setIsMobile] = useState(false);
+  const [backgroundImage, setBackgroundImage] = useState();
 
   const [barsClicked, setBarsClicked] = useState(false);
-  const [showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(false);
 
-  const setInitialBackground = () => {
-    // Check screen width and set background image accordingly
-    if (window.innerWidth <= 768) {
-      setBackgroundImage(mainBackgroundMobile); // Mobile version
-    } else {
-      setBackgroundImage(mainBackground); // Desktop version
-    }
-  };
+  // const setInitialBackground = () => {
+  //   // Check screen width and set background image accordingly
+  //   if (window.innerWidth <= 768) {
+  //     setBackgroundImage(mainBackgroundMobile); // Mobile version
+  //   } else {
+  //     setBackgroundImage(mainBackground); // Desktop version
+  //   }
+  // };
 
-  useEffect(() => {
-    const updateDeviceType = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // Initial device type check
-    updateDeviceType();
-
-    setInitialBackground();
-
-    // Listen for window resize events
-    window.addEventListener("resize", updateDeviceType);
-    return () => {
-      window.removeEventListener("resize", updateDeviceType);
-    };
-  }, []);
 
   useEffect(() => {
-    const bodyEl = document.querySelector(".page-background");
+    const bodyEl = document.querySelector(".main-section");
     // const bodyEl = document.querySelector;
 
     // Temporarily remove the fade-in class to trigger the fade effect
@@ -95,12 +74,12 @@ function HomePage() {
 
   // Logic to update background based on the chosen name
   function handleBackgroundChange(name) {
-    let newBackground = mainBackground; // default image
-    let newBackgroundMobile = mainBackgroundMobile;
+    let newBackground = ""; // default image
+    let newBackgroundMobile = "";
 
     if (name === undefined) {
-      newBackground = mainBackground;
-      newBackgroundMobile = mainBackgroundMobile;
+      newBackground = "";
+      newBackgroundMobile = "";
     }
     if (name === "תומר עמיקם") {
       newBackground = tomersImage;
@@ -130,30 +109,34 @@ function HomePage() {
 
   function handleAbout() {
     setShowDesc(true);
-    setBackgroundImage(mainBackground);
+    setBackgroundImage("");
     setChosen({});
     setShowArtistsList(false);
   }
 
   return (
-    <main className="main">
-      <div className="page-background"></div>
-      <Header chosen={chosen} />
+    <main>
+      <Header
+        chosen={chosen}
+        setBarsClicked={setBarsClicked}
+        barsClicked={barsClicked}
+        onSetChosen={handleChosen}
+        onSetAbout={handleAbout}
+        showList={showArtistsList}
+        onSetShowList={setShowArtistsList}
+        onHandleBackground={handleBackgroundChange}
+        artistsData={artistsData}
+        isMobile={isMobile}
+      />
+      {/* <div className="page-background"></div> */}
 
-      {isMobile && (
-        <MenuButton barsClicked={barsClicked} setBarsClicked={setBarsClicked} />
-      )}
-      <div className="section-two">
-        <MainDescription showDesc={showDesc} chosen={chosen} setShowForm={setShowForm} showForm={showForm}/>
-        <Sidebar
-          setBarsClicked={setBarsClicked}
-          barsClicked={barsClicked}
-          onSetChosen={handleChosen}
-          onSetAbout={handleAbout}
-          showList={showArtistsList}
-          onSetShowList={setShowArtistsList}
-          onHandleBackground={handleBackgroundChange}
-          artistsData={artistsData}
+      
+      <div className="main-section" id="main-section">
+        <MainDescription
+          showDesc={showDesc}
+          chosen={chosen}
+          setShowForm={setShowForm}
+          showForm={showForm}
         />
       </div>
       {isMobile && <SocialLinksMobile />}

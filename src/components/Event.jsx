@@ -17,13 +17,21 @@ function Event({ event }) {
         <p>{date}</p>
         <p>{time}</p>
       </div>
-      <div className="event-detils-box">
+      <div className="event-details-box">
         <div>{name}</div>
         <div className="event-address">{address}</div>
       </div>
-      <p className={`${!link ? 'details-soon' : 'more-details'}`}>{`${
-        !link ? "פרטים בקרוב" : "לפרטים נוספים"
-      }`}</p>
+      <p className={`${!link ? "details-soon" : "more-details"}`}>
+        {!link ? (
+          <>
+            פרטים <br /> בקרוב
+          </>
+        ) : (
+          <>
+            לפרטים <br /> נוספים
+          </>
+        )}
+      </p>
     </a>
   );
 }

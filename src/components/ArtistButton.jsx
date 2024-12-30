@@ -4,6 +4,7 @@ function ArtistButton({
   onSetChosen,
   onHandleBackground,
   handleClickedArtist,
+  onSetShowList
 }) {
   function handleSetChosen(e) {
     const clickedArtist = e.target.value;
@@ -15,13 +16,17 @@ function ArtistButton({
 
   return (
     <li>
-      <button
-        value={artist.name}
-        onClick={(e) => handleSetChosen(e)}
-        className="artist-btn"
-      >
-        {artist.name} <br /> {`(${artist.instrument})`}
-      </button>
+      <a href="#main-section">
+        <button
+          value={artist.name}
+          onClick={(e) => {handleSetChosen(e)
+            onSetShowList(false)
+          }}
+          className="artist-btn"
+        >
+          {artist.name} <br /> {`(${artist.instrument})`}
+        </button>
+      </a>
     </li>
   );
 }

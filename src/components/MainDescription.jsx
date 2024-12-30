@@ -81,7 +81,11 @@ function MainDescription({ showDesc, chosen, setShowForm, showForm }) {
             </div>
           )}
         </div>
-        <EmbedVideo />
+        <EmbedVideo
+          srcUrl="https://www.youtube.com/embed/NlqZHSPSvzQ?rel=0"
+          title="Winter - From A. Piazzolla&#39;s Four Seasons חורף - מתוך ארבעת העונות של א. פיאצולה"
+          className="homepage-youtube-container"
+        />
       </div>
     </>
   );
