@@ -1,17 +1,19 @@
 import { Link, Outlet } from "react-router";
+import { useTranslation } from "react-i18next";
 
 function MediaPage() {
+  const { t } = useTranslation();
   return (
     <div className="media-page">
       <Link className="back-home-btn-gallery" to="/">
-        חזרה לעמוד הבית
+        {t("buttons.backHome")}
       </Link>
       <div className="media-nav">
         <Link className="media-button" to="/media/videos">
-          וידיאו
+          {t("buttons.videos")}
         </Link>
         <Link className="media-button" to="/media/photos">
-          תמונות
+          {t("buttons.photos")}
         </Link>
       </div>
       <Outlet />

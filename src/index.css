@@ -92,7 +92,7 @@ main {
 
 .navbar {
   display: flex;
-  flex-flow: row-reverse;
+  flex-flow: row;
   align-items: center;
   justify-content: space-around;
   width: calc(100% - 17px);
@@ -114,7 +114,7 @@ main {
   margin: 10px;
   text-align: center;
   width: 10rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -131,7 +131,7 @@ main {
   color: white;
   font-family: "Assistant", sans-serif;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 0 auto;
 }
 
@@ -230,7 +230,7 @@ main {
 .youtube-icon,
 .instagram-icon,
 .facebook-icon-btn {
-  width: 2rem;
+  width: 1.5rem;
 }
 
 .main-section {
@@ -372,7 +372,7 @@ h2 {
   align-self: center;
   gap: 1rem;
 
-  direction: rtl;
+  /* direction: rtl; */
 
   border: 1px solid;
   width: 90%;
@@ -426,8 +426,8 @@ input {
 #message::placeholder {
   color: gray;
   font-size: 1rem;
-  text-align: right; /* Align placeholder to the right */
   padding-right: 0.5rem;
+  padding-left: 0.5rem;
   position: absolute;
   top: 1; /* Position placeholder at the top */
   right: 0; /* Fine-tune right positioning */
@@ -603,7 +603,7 @@ input {
 }
 
 .event-date-box > h4 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin: 0;
 }
 
@@ -706,9 +706,8 @@ input {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  font-size: 0.7rem;
   width: 10%;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .details-soon {
@@ -885,6 +884,78 @@ input {
   /* border: 2px solid gold; */
 }
 
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.dropdown {
+  position: relative;
+  background-color: #ffffff2e;
+  /* border: 1px solid #ccc; */
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  /* border: 2px solid darkblue; */
+}
+
+/* .dropdown-button {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 2px solid sandybrown;
+} */
+
+.dropdown-menu {
+  display: none;
+
+  position: absolute;
+  top: 2.3rem;
+  right: 0;
+  left: 0;
+  background-color: #f9f9f9;
+  width: auto;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+
+  /* border: 2px solid firebrick; */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-flow: column;
+  /* align-items: center; */
+}
+
+.dropdown-item {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  margin: 0;
+
+  /* border: 2px solid rgb(34, 178, 171); */
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+
+  background-color: #f1f1f1;
+}
+
 @media only screen and (max-width: 1100px) {
   .main-section {
     height: 100%;
@@ -901,12 +972,21 @@ input {
 
   .about-trio-btn,
   .about-artists-btn-container,
-  .coming-up-btn {
+  .coming-up-btn,
+  .about-artists-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
     flex-shrink: 1;
     width: auto;
     margin: 5px;
-    /* font-size: clamp(0.9rem, 2vw, 1.1rem); */
+    height: 70%;
+    padding: 0;
+
+    font-size: clamp(0.5rem, 1.6vw, 1rem);
+
+    /* border: 1px solid fuchsia; */
   }
 
   .navbar p {

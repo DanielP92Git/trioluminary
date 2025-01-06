@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
+import { useTranslation } from "react-i18next";
 function ArtistButton({
   artist,
   onSetChosen,
   onHandleBackground,
   handleClickedArtist,
-  onSetShowList
+  onSetShowList,
 }) {
+  const { t } = useTranslation();
   function handleSetChosen(e) {
     const clickedArtist = e.target.value;
 
@@ -19,12 +21,14 @@ function ArtistButton({
       <a href="#main-section">
         <button
           value={artist.name}
-          onClick={(e) => {handleSetChosen(e)
-            onSetShowList(false)
+          onClick={(e) => {
+            handleSetChosen(e);
+            onSetShowList(false);
           }}
           className="artist-btn"
         >
-          {artist.name} <br /> {`(${artist.instrument})`}
+          {t(`about.aboutArtists.${artist.key}.name`)} <br />{" "}
+          {`(${t(`about.aboutArtists.${artist.key}.instrument`)})`}
         </button>
       </a>
     </li>

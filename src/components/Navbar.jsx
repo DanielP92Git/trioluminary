@@ -2,63 +2,73 @@
 import ArtistButton from "./ArtistButton";
 import SocialLinks from "./SocialLinks";
 import { Link } from "react-router-dom";
-// import logo from "../assets/Luminary (3).png";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { AppContext } from "../contexts/AppContextFile";
 
-function Navbar({
-  setBarsClicked,
-  barsClicked,
-  onSetChosen,
-  onSetAbout,
-  showList,
-  onSetShowList,
-  onHandleBackground,
-  artistsData,
-}) {
+function Navbar() {
+  const {
+    setBarsClicked,
+    barsClicked,
+    handleChosen,
+    handleAbout,
+    showArtistsList,
+    setShowArtistsList,
+    handleBackgroundChange,
+    artistsData,
+    languages,
+    setLanguages,
+  } = useContext(AppContext);
+
+  const { t } = useTranslation();
+
   function handleClickedArtist() {
     setBarsClicked(false);
   }
 
   return (
     <div className={`navbar ${barsClicked ? "navbar-show" : ""}`}>
-
-        <a
+      <LanguageSwitcher languages={languages} onSetLanguages={setLanguages} />
+      <a
         href="#main-section"
-          className="about-trio-btn"
-          onClick={() => {
-            onSetAbout();
-            handleClickedArtist();
-          }}
-        >
-          אודות הטריו
-        </a>
-      <a className="about-artists-btn-container" onClick={() => onSetShowList(!showList)}>
-   
-          <button
-            className="about-artists-btn"
-            
-          >
-            אודות הנגנים
-          </button>
-        {showList && (
+        className="about-trio-btn"
+        onClick={() => {
+          handleAbout();
+          handleClickedArtist();
+        }}
+      >
+        {t("navbar.aboutTrio")}
+      </a>
+      <div
+        className="about-artists-btn-container"
+        onClick={() => setShowArtistsList(!showArtistsList)}
+      >
+        <button className="about-artists-btn">
+          {t("navbar.aboutArtists")}
+        </button>
+        {showArtistsList && (
           <ul className="submenu">
             {artistsData.map((artist) => (
               <ArtistButton
                 key={artist.name}
                 artist={artist}
-                onSetShowList={onSetShowList}
-                onSetChosen={onSetChosen}
-                onHandleBackground={onHandleBackground}
+                onSetShowList={setShowArtistsList}
+                onSetChosen={handleChosen}
+                onHandleBackground={handleBackgroundChange}
                 handleClickedArtist={handleClickedArtist}
               />
             ))}
           </ul>
         )}
-      </a>
+      </div>
       <Link className="coming-up-btn" to="/events">
-        להופעות הקרובות
+        {t("navbar.comingUp")}
       </Link>
 
-      <Link className="coming-up-btn" to='/media/photos'>מדיה</Link>
+      <Link className="coming-up-btn" to="/media/photos">
+        {t("navbar.media")}
+      </Link>
       <SocialLinks />
       <p>Luminary Trio</p>
     </div>

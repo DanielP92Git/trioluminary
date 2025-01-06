@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
+import { useTranslation } from "react-i18next";
+
 function Event({ event }) {
-  const { day, date, name, address, time, link } = event;
+  // const { day, date, name, address, time, link } = event;
+  const { t } = useTranslation();
+  const link = t(`events.eventsDetails.${event}.link`);
   return (
     <a
-      dir="rtl"
       href={link || undefined}
       onClick={(e) => {
         if (!link) e.preventDefault();
@@ -13,23 +16,21 @@ function Event({ event }) {
       rel="noreferrer"
     >
       <div className="event-date-box">
-        <h4>{day}</h4>
-        <p>{date}</p>
-        <p>{time}</p>
+        <h4>{t(`events.eventsDetails.${event}.day`)}</h4>
+        <p>{t(`events.eventsDetails.${event}.date`)}</p>
+        <p>{t(`events.eventsDetails.${event}.time`)}</p>
       </div>
       <div className="event-details-box">
-        <div>{name}</div>
-        <div className="event-address">{address}</div>
+        <div>{t(`events.eventsDetails.${event}.name`)}</div>
+        <div className="event-address">
+          {t(`events.eventsDetails.${event}.address`)}
+        </div>
       </div>
       <p className={`${!link ? "details-soon" : "more-details"}`}>
         {!link ? (
-          <>
-            פרטים <br /> בקרוב
-          </>
+          <>{t("events.detailsSoon")}</>
         ) : (
-          <>
-            לפרטים <br /> נוספים
-          </>
+          <>{t("events.moreDetails")}</>
         )}
       </p>
     </a>

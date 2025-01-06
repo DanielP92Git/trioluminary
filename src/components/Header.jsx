@@ -2,31 +2,17 @@
 import logo from "../assets/Luminary (3).png";
 import MenuButton from "./MenuButton";
 import Navbar from "./Navbar";
-function Header({
-  setBarsClicked,
-  barsClicked,
-  onSetChosen,
-  onSetAbout,
-  showList,
-  onSetShowList,
-  onHandleBackground,
-  artistsData,
-  isMobile,
-}) {
+import { AppContext } from "../contexts/AppContextFile";
+import { useContext } from "react";
+
+function Header() {
+  const { barsClicked, setBarsClicked, isMobile } = useContext(AppContext);
+
   return (
     <>
       <div className="homepage-hero">
         {isMobile && <img src={logo} alt="logo" className="logo" />}
-        <Navbar
-          setBarsClicked={setBarsClicked}
-          barsClicked={barsClicked}
-          onSetChosen={onSetChosen}
-          onSetAbout={onSetAbout}
-          showList={showList}
-          onSetShowList={onSetShowList}
-          onHandleBackground={onHandleBackground}
-          artistsData={artistsData}
-        />
+        <Navbar />
         {isMobile && (
           <MenuButton
             barsClicked={barsClicked}

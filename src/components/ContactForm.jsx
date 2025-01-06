@@ -4,10 +4,12 @@ import { useForm } from "react-hook-form";
 import CalendarPicker from "./CalendarPicker";
 import "react-calendar/dist/Calendar.css";
 import emailjs from "emailjs-com";
+import { useTranslation } from "react-i18next";
 
 function ContactForm({ setShowForm, setSubmitMessage }) {
   const [date, setDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(false);
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -37,14 +39,10 @@ function ContactForm({ setShowForm, setSubmitMessage }) {
     );
   }
 
-  function toggleCalendar() {
-    setShowCalendar(true);
-  }
-
   return (
     <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="input-container">
-        <label htmlFor="from_name">שם:</label>
+        <label htmlFor="from_name">{t("form.name")}</label>
         <input
           type="text"
           id="from_name"
@@ -57,7 +55,7 @@ function ContactForm({ setShowForm, setSubmitMessage }) {
       </div>
 
       <div className="input-container">
-        <label htmlFor="from_email">דוא&rdquo;ל:</label>
+        <label htmlFor="from_email">{t("form.email")}</label>
         <input
           type="text"
           id="from_email"
@@ -78,13 +76,13 @@ function ContactForm({ setShowForm, setSubmitMessage }) {
         )}
       </div>
       <div className="input-container">
-        <label htmlFor="date">תאריך האירוע:</label>
+        <label htmlFor="date">{t("form.date")}</label>
         <input
           type="text"
           id="date"
           name="date"
           value={date.toLocaleDateString("he-IL")}
-          onClick={toggleCalendar}
+          onClick={()=> setShowCalendar(true)}
           readOnly
           {...register("date")}
         />
@@ -100,12 +98,12 @@ function ContactForm({ setShowForm, setSubmitMessage }) {
         <textarea
           name="message"
           id="message"
-          placeholder="תיאור הפנייה"
+          placeholder={t("form.message")}
           {...register("message")}
         ></textarea>
       </div>
       <button type="submit" className="submit-form">
-        שלח
+      {t("form.submit")}
       </button>
     </form>
   );

@@ -1,0 +1,75 @@
+{
+  "navbar": {
+    "aboutTrio": "About the Trio",
+    "aboutArtists": "About the Artists",
+    "comingUp": "Upcoming Concerts",
+    "media": "Media"
+  },
+  "about": {
+    "aboutTrio": "Luminary Trio is the creation of three musicians, graduates of the Jerusalem Academy of Music and Dance — Daniel Pagis (piano), Shir Tayeb (violin), and Tomer Amikam (bass clarinet).\nThe unique combination of piano, violin, and bass clarinet creates a rich and profound harmony, offering a distinctive color and interpretation to a broad classical repertoire. The trio’s repertoire includes gems by some of the greatest classical composers, such as Mozart, Schubert, Franck, Clara Schumann and more.\nIn addition, the ensemble incorporates works by Israeli composers as well as arrangements of beloved songs like \"Jerusalem of Gold\", \"Hora He'achzut\", and \"When a Light Shines in Your Window\".\nWe invite you to join us on a captivating musical journey — exploring world classics in a new light and melodies that resonate with the soul of the Israeli spirit.",
+
+    "aboutArtists": {
+      "tomerAmikam": {
+        "name": "Tomer Amikam",
+        "instrument": "Bass Clarinet",
+        "bio": "Tomer is a clarinet and bass clarinet player, formerly the second clarinet and bass clarinet player with the Haifa Symphony Orchestra. He has performed as a freelance musician with some of the leading orchestras in Israel, including the Jerusalem Symphony Orchestra, the Beersheva Sinfonietta, the Jerusalem Street Orchestra, the Raanana Symphonette, and more. However, he does not limit himself solely to his classical music career. He has also performed in musicals (Beersheva Theater and the Incubator Theater), film music, and various ensembles. He has participated in recordings, the release of two albums, and national and international concert tours."
+      },
+      "shirTayeb": {
+        "name": "Shir Tayeb",
+        "instrument": "Violin",
+        "bio": "Shir is a violinist with a Bachelor’s and Master’s degree in Music from the Jerusalem Academy of Music and Dance, where she studied under Prof. Lihi Ben-Dayan. She is a founding member of the Luminary Trio. Shir is also a regular member of the Jerusalem Street Orchestra, serving as a violinist, the principal second violin, and the orchestra’s musician coordinator for the past nine years. She is a founding member of the Jerusalem Street Orchestra Association. Shir has participated in various projects with orchestras in Israel, including the Jerusalem Symphony Orchestra, the Revolution Orchestra, the Raanana Symphonette, and others. During her studies, she was invited to participate in international masterclasses in Israel and Europe and took part in delegations of Israeli musicians to the United States and Europe. In addition to her active musical career, Shir is the Head of the Student Affairs Office at the Jerusalem Academy of Music and Dance."
+      },
+      "danielPagis": {
+        "name": "Daniel Pagis",
+        "instrument": "Piano",
+        "bio": "Daniel is a pianist and piano teacher with a Bachelor’s and Master’s degree in Music from the Jerusalem Academy of Music and Dance, where he studied under Dr. Dmitri Novgorodsky and Prof. Michael Boguslavsky. Throughout his career, Daniel has performed with a wide variety of musicians and ensembles and has accompanied instrumentalists in auditions and recitals. He has participated in masterclasses and diverse festivals, including the \"Sounds in the Desert\" festival in Sde Boker, where he performed original works by Israeli composers, and the \"Street Piano Festival,\" an initiative by the Jerusalem Street Orchestra. In addition to his performance career, Daniel is dedicated to teaching piano and devotes a significant portion of his time to musical education."
+      }
+    }
+  },
+  "buttons": {
+    "cta": "Book a performance",
+    "backHome": "Back to Home",
+    "videos": "Videos",
+    "photos": "Photo Gallery"
+  },
+  "events": {
+    "upcoming": "Upcoming Concerts",
+    "moreDetails": "More \n Details",
+    "detailsSoon": "Details \n Soon",
+    "eventsDetails": {
+      "27122024": {
+        "day": "Friday",
+        "date": "December 27, 2024",
+        "name": "Concert at Binyamin",
+        "address": "3 Ahad Ha'am St., Jerusalem",
+        "time": "11:30",
+        "link": "https://www.facebook.com/events/1735688920551875?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22your_upcoming_events_unit%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+      },
+      "15012025": {
+        "day": "Wednesday",
+        "date": "January 15, 2025",
+        "name": "Piazzolla and Schubert at Baroque Pub",
+        "address": "3 Ben Sira St., Jerusalem",
+        "time": "20:30",
+        "link": ""
+      },
+      "20022025": {
+        "day": "Thursday",
+        "date": "February 20, 2025",
+        "name": "Wine, Cheese, and Music at Tzuba Winery",
+        "address": "Tzuba Winery, Kibbutz Tzuba",
+        "time": "20:00",
+        "link": ""
+      }
+    }
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "date": "Date",
+    "location": "Location",
+    "message": "Message...",
+    "submit": "Submit"
+  }
+}
