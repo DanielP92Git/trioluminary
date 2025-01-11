@@ -106,18 +106,18 @@ export const AppProvider = ({ children }) => {
   // Set the background image based on the chosen artist
   useEffect(() => {
     const bodyEl = document.querySelector(".main-section");
-
+    if (!bodyEl) return;
     // Temporarily remove the fade-in class to trigger the fade effect
-    bodyEl.classList.remove("slide-effect");
+    bodyEl?.classList.remove("slide-effect");
 
     // Trigger reflow
-    bodyEl.offsetHeight; // Reading this property forces the reflow
+    bodyEl?.offsetHeight; // Reading this property forces the reflow
 
     // Set the background image and trigger fade-in effect
     bodyEl.style.backgroundImage = `url(${backgroundImage})`;
 
     // After setting the background, add the fade-in class to trigger the fade effect
-    bodyEl.classList.add("slide-effect");
+    bodyEl?.classList.add("slide-effect");
   }, [backgroundImage]);
 
   // Set the direction of the page based on the current language
